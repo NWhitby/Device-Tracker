@@ -1,1 +1,30 @@
-<h1>Sign Up Page</h1>
+<h1>Sign Up!</h1>
+
+<br>
+
+<div>
+  <%= form_for @user do |f| %>
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username, required:true %>
+  </div>
+  <br>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <br>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <br>
+
+  <%= f.submit "Sign In" %>
+<% end %>
+
+  <br>
+
+<h3><%= link_to "Login", "/login"%></h3>
