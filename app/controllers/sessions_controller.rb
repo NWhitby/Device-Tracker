@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
-   def create
+  def create
     @user = User.find_by(username: params[:user][:username])
+
     if @user && @user.authenticate(params[:user][:username])
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -14,7 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
-   def destroy
+  def destroy
     session.destroy
     redirect_to root_path
   end
