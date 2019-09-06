@@ -4,8 +4,7 @@
   <li><%= link_to device.name, device_path(device) %></li>
 <% end %></ul></div> <br />
 
-<%= link_to "Create new device", new_user_device_path(@user) %>
-<br>
-<br>
+<h3><%= link_to "Create new device", new_user_device_path(@user) %></h3>
+
 
 <h3><%= link_to('Recently added devices', '/devices/recent') %></h3>
