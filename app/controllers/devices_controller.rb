@@ -1,4 +1,5 @@
 class DevicesController < ApplicationController
+  before_action :require_login, except: [:index]
 
   def index
     @user = User.find_by(id: params[:user_id])
@@ -59,6 +60,5 @@ class DevicesController < ApplicationController
     def device_params
       params.require(:device).permit(:name, :description, :user_id,)
     end
-
   
 end
