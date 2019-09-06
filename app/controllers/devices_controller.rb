@@ -32,5 +32,16 @@ class DevicesController < ApplicationController
     @comment = Comment.new(device: @device)
   end
 
+  def update
+    @device = Device.find(params[:id])
+
+    if current_user.id == @Device.user_id
+      @device.update(device_params)
+      redirect_to device_path(@device)
+    else
+      redirect_to edit_device_path(@device)
+    end
+  end
+
   
 end
