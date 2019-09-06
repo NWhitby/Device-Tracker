@@ -43,5 +43,22 @@ class DevicesController < ApplicationController
     end
   end
 
+  def destroy
+    @device = Device.find(params[:id])
+
+    if current_user.id == @device.user_id
+      @device.destroy
+      redirect_to user_devices_path(current_user)
+    else 
+      redirect_to device_path(@device)
+    end
+  end
+
+  private
+
+    def device_params
+      params.require(:device).permit(:name, :description, :user_id,)
+    end
+
   
 end
