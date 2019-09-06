@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
 
   def index
     @user = User.find_by(id: params[:user_id])
-    
+
     if @user
       @devices = @user.devices.all
     else
@@ -24,5 +24,13 @@ class DevicesController < ApplicationController
       render 'new'
     end
   end
+
+  def show
+    @user = current_user
+
+    @device ||= Device.find(params[:id])
+    @comment = Comment.new(device: @device)
+  end
+
   
 end
