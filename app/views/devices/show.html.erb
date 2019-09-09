@@ -1,0 +1,19 @@
+<h1>Device Details</h1><br />
+
+<h2><%= @device.name %></h2>
+<p><%= @device.description %></p><br />
+
+<h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+<br>
+
+<h2>Comments:</h2>
+  <%= render 'comments/comments'%>
+<br>
+
+<%= link_to "Edit", edit_device_path(@device) %>
+
+<%= link_to "Delete", @device, method: :delete, data: { confirm: "Are you sure you want to delete this device?"} %>
+
+<%= link_to "Back", user_devices_path(@user) %>
+

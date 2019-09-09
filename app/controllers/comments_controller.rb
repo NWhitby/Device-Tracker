@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @device= Device.find(params[:hdevice_id])
+    @device= Device.find(params[:device_id])
     @comment = Comment.find(params[:id])
 
     if current_user.id == @comment.user_id

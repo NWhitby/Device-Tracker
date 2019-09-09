@@ -1,0 +1,6 @@
+<%= form_for [@device, @comment] do |f| %>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.hidden_field :device_id, :value => @device.id %>
+  <%= f.text_field :content %>
+  <%= f.submit "Submit" %>
+<% end %>

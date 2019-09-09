@@ -1,0 +1,6 @@
+<h2>Recently Added Devices</h2>
+
+<% @devices.each do |device| %>
+<li><%= link_to device.name, device_path(device) %>
+  created by: <%= device.user.username %>
+<% end %>
