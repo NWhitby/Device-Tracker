@@ -1,6 +1,7 @@
 li {
   list-style-type: none;
 }
+
 .navbar { 
   background: white;
 }
@@ -22,11 +23,9 @@ li {
   padding-right: 15px;
 }
 
-
 .navbar-collapse { 
   justify-content: flex-end;
 }
-
 
 /* <---- body style ----> */
 
