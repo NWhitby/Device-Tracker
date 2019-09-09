@@ -1,11 +1,10 @@
-<div class="comment">
+<div>
   <% @device.comments.each do |comment| %>
     <p><strong><%= comment.content %></strong><br />by: <%= comment.commentor.username %></p><br />
       <% if current_user.id == comment.user_id %>
         <%= form_tag(device_comment_path(@device, comment), method: "delete") do %>
           <div><%= submit_tag 'Delete Comment' %></div>
         <% end %>
-      <% end %>
-    <%#= button_to "Delete Comment", {:controller => :comments, :action => 'destroy', :id => c.id}, :method => :delete %>
+      <% end %>    
   <% end %>
 </div>

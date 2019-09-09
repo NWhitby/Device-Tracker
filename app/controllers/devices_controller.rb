@@ -29,9 +29,17 @@ class DevicesController < ApplicationController
 
   def show
     @user = current_user
-
     @device ||= Device.find(params[:id])
     @comment = Comment.new(device: @device)
+  end
+
+  def edit
+    @device= Device.find(params[:id])
+
+    if current_user.id == @device.user_id
+    else
+      redirect_to device_path(@device)
+    end
   end
 
   def update
@@ -54,6 +62,11 @@ class DevicesController < ApplicationController
     else 
       redirect_to device_path(@device)
     end
+  end
+
+  
+  def recent
+    @devices = Device.by_recently_added
   end
 
   private
