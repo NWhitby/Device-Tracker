@@ -1,9 +1,11 @@
-<h1>My Devices:</h1>
+<h1>Owned Devices</h1>
 
 <div><ul><% @user.devices.each do |device| %>
   <li><%= link_to device.name, device_path(device) %></li>
 <% end %></ul></div> <br />
 
 <h3><%= link_to "Create new device", new_user_device_path(@user) %></h3>
+
+<br>
 
 <h3><%= link_to('Recently added devices', '/devices/recent') %></h3>
