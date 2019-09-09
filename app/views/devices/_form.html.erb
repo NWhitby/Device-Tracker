@@ -1,0 +1,22 @@
+ <%= form_for [current_user, @device] do |f| %>
+    <% if @device.errors.any? %>
+      <div id="error_explanation">
+        <h3>
+          <%= pluralize(@device.errors.count, "error") %>
+          prohibited this post from being saved:
+        </h3>
+        <ul>
+        <% @device.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field<%= 'field_with_errors' if @device.errors[:name].any? %>">
+      <%= f.text_field :name, placeholder: "Device Name" %><br><br>
+    </div>    
+    <%= f.text_area :description, size: "35x5" "Description" %><br><br>
+    </div>    
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= f.submit "Submit" %>
+  <% end %>

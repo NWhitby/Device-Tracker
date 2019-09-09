@@ -1,1 +1,15 @@
-<h1>Device Index Page</h1>
+<h1>Devices</h1>
+
+<ul>
+  <% @devices.each do |device| %>
+    <li><%= link_to device.name, device_path(device) %>
+     - Owner: <%= device.user.username %>
+     <br>
+     <% if device.user == current_user %>
+       <%= link_to "Edit", edit_device_path(device) %>
+       <%= link_to "Delete", device, method: :delete, data: { confirm: "Are you sure you want to delete this device?"} %>
+     <% end %>
+   </li>
+  <br>
+  <% end %>
+</ul>
