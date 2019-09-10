@@ -1,24 +1,15 @@
-# README
+# Device Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Device Tracker is a Ruby on Rails based Content Management System (CMS) that allows a user to view, describe, and discuss their devices with other users. It emphasizes RESTful routing, CRUD operations, MVC architecture, and OmniAuth.
 
-Things you may want to cover:
+## To execute:
 
-* Ruby version
+```clone``` the repository, ```cd``` into the projects directory, run ```bundle install```, ```rails db:migrate```, and ```rails server```. Access the app by typing  ```localhost:3000``` in your web browser.
 
-* System dependencies
+## Contributing
 
-* Configuration
+In the interest of embracing the open source community, contributions are greatly appreciated! Ideas, changes, corrections, and additional features are encouraged! Bug reports and pull requests are welcome on GitHub at https://github.com/NWhitby/Device-Tracker.
 
-* Database creation
+## License
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
