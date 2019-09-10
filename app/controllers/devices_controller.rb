@@ -18,10 +18,10 @@ class DevicesController < ApplicationController
 
   def create
     @user = current_user
-
     @device = current_user.devices.build(device_params)
+
     if @device.save
-      redirect_to user_devices_path(current_user)
+      redirect_to user_devices_path(current_user), success: "Device saved."
     else
       render 'new'
     end
@@ -38,18 +38,18 @@ class DevicesController < ApplicationController
 
     if current_user.id == @device.user_id
     else
-      redirect_to device_path(@device)
+      redirect_to device_path(@device), warning: "Device must be edited by owner."
     end
   end
 
   def update
     @device = Device.find(params[:id])
 
-    if current_user.id == @Device.user_id
+    if current_user.id == @device.user_id
       @device.update(device_params)
-      redirect_to device_path(@device)
+      redirect_to device_path(@device), success: "Device updated."
     else
-      redirect_to edit_device_path(@device)
+      redirect_to edit_device_path(@device), warning: "Please try again."
     end
   end
 
@@ -58,9 +58,9 @@ class DevicesController < ApplicationController
 
     if current_user.id == @device.user_id
       @device.destroy
-      redirect_to user_devices_path(current_user)
+      redirect_to user_devices_path(current_user), info: "Device deleted."
     else 
-      redirect_to device_path(@device)
+      redirect_to device_path(@device), warning: "Device must be deleted by owner."
     end
   end
 

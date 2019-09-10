@@ -3,7 +3,7 @@
 <br>
 
 <% @devices.each do |device| %>
-<li><%= link_to device.name, device_path(device) %>
-  - Owner: <%= device.user.username %></li>
+<li><%= link_to device.name, device_path(device) %><br>
+  Owner: <%= device.user.username %></li>
   <br>  
 <% end %>

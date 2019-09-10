@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     @comment = @device.comments.create(comment_params)
 
     if @comment.save
-      redirect_to device_path(@device)
+      redirect_to device_path(@device), success: "Comment created."
     else
-      redirect_to device_path(@device)
+      redirect_to device_path(@device), danger: "Please try again."
     end
   end
 
@@ -20,9 +20,9 @@ class CommentsController < ApplicationController
 
     if current_user.id == @comment.user_id
       @comment.destroy
-      redirect_to device_path(@device)
+      redirect_to device_path(@device), info: "Comment deleted."
     else
-      redirect_to device_path(@device)
+      redirect_to device_path(@device), warning: "Comment must be deleted by owner."
     end
   end
 

@@ -12,7 +12,7 @@
           <a class="nav-link " data-value="Home"><%= link_to "Home", user_path(current_user)%></a>    
         </li> 
         <li class="nav-item">
-          <a class="nav-link" data-value="All User Devices"><%= link_to "All Devices", user_devices_path(current_user)%></a>
+          <a class="nav-link" data-value="My Devices"><%= link_to "My Devices", user_devices_path(current_user)%></a>
         </li>          
         <li class="nav-item">
           <a class="nav-link " data-value="Logout"><%= link_to "Logout", '/logout' if current_user %></a>  

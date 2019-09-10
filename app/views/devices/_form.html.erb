@@ -13,10 +13,10 @@
       </div>
     <% end %>
     <div class="field<%= 'field_with_errors' if @device.errors[:name].any? %>">
-      <%= f.text_field :name, placeholder: "Device Name" %><br><br>
-    </div>    
-    <%= f.text_area :description, size: "35x5" "Description" %><br><br>
-    </div>    
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <%= f.submit "Submit" %>
+      <%= f.text_field :name, placeholder: "Device Name" %><br><br>     
+      <%= f.text_area :description, placeholder: "Description", size: "50x5" %><br><br>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+      <%= f.submit "Submit" %>
+    </div>        
   <% end %>

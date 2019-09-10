@@ -13,14 +13,14 @@ class SessionsController < ApplicationController
       if @user && @user.authenticate(params[:password])
       login
       else
-        redirect_to '/login'
+        redirect_to '/login', danger: "Invalid information. Please try again."
       end
     end
   end
 
   def destroy
     session.destroy
-    redirect_to root_path
+    redirect_to root_url, info: "Logout successful."
   end
 
   private
