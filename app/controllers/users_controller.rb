@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_devices_url(@user), success: "Sign in successful."
     else
-      redirect_to new_user_path, danger: "Please try again."
+      redirect_to new_user_path, danger: "Invalid information. Please try again."
     end
   end
 
