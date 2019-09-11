@@ -1,6 +1,6 @@
 <div>
   <% @device.comments.each do |comment| %>
-    <p><strong><%= comment.content %></strong><br />by: <%= comment.commentor.username %></p><br />
+    <p><strong><%= comment.content %></strong><br />by: <%= comment.commenter.username %></p><br />
       <% if current_user.id == comment.user_id %>
         <%= form_tag(device_comment_path(@device, comment), method: "delete") do %>
           <div><%= submit_tag 'Delete Comment' %></div>

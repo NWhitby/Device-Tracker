@@ -2,7 +2,7 @@ class Device < ApplicationRecord
 
   belongs_to :user
   has_many :comments, :dependent => :destroy
-  has_many :commentors, :class_name => "User", through: :comments
+  has_many :commenters, :class_name => "User", through: :comments
 
   validates :name, presence: true  
   validates :description, presence: true 
