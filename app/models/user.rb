@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_many :devices
   has_many :comments
-  has_many :commented_devices, :through => :comments, :source => :devices
+  has_many :commented_devices, :through => :comments, :source => :device
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 4 }
   validates :email, presence: true, uniqueness: true
